@@ -157,11 +157,13 @@ Après l’importation, la VM Mobexler apparaît correctement dans la liste des 
 <table>
 <tr>
 <td align="center" width="50%">
-<img src="screenshots/import_VM.png" width="100%" alt="Importation VM"><br>
+<img width="100%" alt="Importation VM" src="https://github.com/user-attachments/assets/27f650be-fe35-44f8-b201-0b61ff65cc78" >
+<br>
 <b>Importation de l’OVA</b>
 </td>
 <td align="center" width="50%">
-<img src="screenshots/mobexler_import.png" width="100%" alt="VM importée"><br>
+<img width="100%" alt="VM importée" src="https://github.com/user-attachments/assets/c88c6c12-8fa6-4e60-baad-f07a22adf81a" >
+<br>
 <b>VM Mobexler importée</b>
 </td>
 </tr>
