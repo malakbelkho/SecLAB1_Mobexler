@@ -1,3 +1,5 @@
+<img width="1366" height="708" alt="Mobexler_on" src="https://github.com/user-attachments/assets/1575c67d-2b8f-40e0-bcc6-1fe60b19fafa" />
+<img width="1366" height="708" alt="Mobexler_on" src="https://github.com/user-attachments/assets/551df907-8ee6-4de9-a4fe-4c957525be76" />
 <div align="center">
 
 # 📱 Mobexler Lab Setup — LAB 1
@@ -23,7 +25,7 @@ L’objectif principal est de disposer d’une VM stable, connectée à Internet
 
 <div align="center">
 
-<img src="screenshots/Mobexler_on.png" width="70%" alt="Mobexler démarré">
+<img width="70%" alt="Mobexler démarré" src="https://github.com/user-attachments/assets/b079b777-6dd9-4add-bf59-6f0d778138b1" />
 
 </div>
 
@@ -99,7 +101,7 @@ Ce fichier représente une machine virtuelle prête à être importée dans Virt
 
 <div align="center">
 
-<img src="screenshots/Mobexler_VM.png" width="70%" alt="Fichier OVA Mobexler">
+<img width="70%" alt="Fichier OVA Mobexler" src="https://github.com/user-attachments/assets/011dfc62-bd15-4855-a751-3490750bf08c" />
 
 </div>
 
@@ -120,11 +122,13 @@ Cette étape permet de tracer le téléchargement et de vérifier l’intégrit�
 <table>
 <tr>
 <td align="center" width="50%">
-<img src="screenshots/hash_pshell.png" width="100%" alt="Hash PowerShell"><br>
+<img width="100%" alt="Hash PowerShell" src="https://github.com/user-attachments/assets/35aac68f-2cd2-42ff-a07b-9e28e5c5dc41" >
+<br>
 <b>Hash calculé avec PowerShell</b>
 </td>
 <td align="center" width="50%">
-<img src="screenshots/online_hash.png" width="100%" alt="Hash online"><br>
+<img width="100%" alt="Hash online" src="https://github.com/user-attachments/assets/de4a2062-2d45-4295-a33f-44c00fde2630" >
+<br>
 <b>Vérification du hash</b>
 </td>
 </tr>
