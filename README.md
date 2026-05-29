@@ -396,8 +396,8 @@ Android Debug Bridge version 1.0.39
 ```
 
 <div align="center">
-
-<img src="screenshots/adbversion.png" width="80%" alt="ADB version">
+    
+<img width="80%" alt="ADB version" src="https://github.com/user-attachments/assets/7089d35a-2aa5-463a-950a-3f5950f54427" >
 
 </div>
 
@@ -410,8 +410,8 @@ adb devices
 Aucun appareil Android n’était encore connecté, ce qui est normal pour ce premier laboratoire.
 
 <div align="center">
-
-<img src="screenshots/adbdevices.png" width="80%" alt="ADB devices">
+    
+<img width="80%" alt="ADB devices" src="https://github.com/user-attachments/assets/f6a553d2-f413-4c27-afe3-fa1e87e7a106" >
 
 </div>
 
@@ -434,9 +434,7 @@ Import OK, NAT + Host-Only OK, Internet OK, DNS OK, ADB prêt.
 Ce snapshot permet de revenir à un état stable avant les prochains travaux pratiques.
 
 <div align="center">
-
-<img src="screenshots/snapshot_creation.png" width="75%" alt="Snapshot CLEAN">
-
+ <img width="75%" alt="Snapshot CLEAN" src="https://github.com/user-attachments/assets/7a4a7434-dad2-435e-8a63-49829bf5183f" >
 </div>
 
 ---
