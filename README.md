@@ -1,6 +1,4 @@
-<img width="1366" height="708" alt="Mobexler_on" src="https://github.com/user-attachments/assets/1575c67d-2b8f-40e0-bcc6-1fe60b19fafa" />
-<img width="1366" height="708" alt="Mobexler_on" src="https://github.com/user-attachments/assets/551df907-8ee6-4de9-a4fe-4c957525be76" />
-<div align="center">
+
 
 # 📱 Mobexler Lab Setup — LAB 1
 
