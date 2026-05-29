@@ -273,7 +273,7 @@ Cette adresse confirme que l’interface **Host-Only** fonctionne correctement.
 
 <div align="center">
 
-<img src="screenshots/ip_status.png" width="80%" alt="IP status">
+<img width="80%" alt="IP status" src="https://github.com/user-attachments/assets/3cdec2f1-fa42-4eae-9d62-f6c5e2f14a8e" />
 
 </div>
 
@@ -284,15 +284,18 @@ Cette adresse confirme que l’interface **Host-Only** fonctionne correctement.
 <table>
 <tr>
 <td align="center" width="33%">
-<img src="screenshots/ipa_1.png" width="100%" alt="ip a 1"><br>
+<img width="100%" alt="ip a 1" src="https://github.com/user-attachments/assets/1b651a73-a40f-4f67-8af8-7dae7fded9e8" >
+<br>
 <b>Interface Host-Only</b>
 </td>
 <td align="center" width="33%">
-<img src="screenshots/ipa_2.png" width="100%" alt="ip a 2"><br>
+<img width="100%" alt="ip a 2" src="https://github.com/user-attachments/assets/f1d7df92-4421-4280-85be-00f50ae83611" >
+<br>
 <b>Détails IP</b>
 </td>
 <td align="center" width="33%">
-<img src="screenshots/ipa_3.png" width="100%" alt="ip a 3"><br>
+<img width="100%" alt="ip a 3" src="https://github.com/user-attachments/assets/0ec48f92-b00c-49cf-9aef-9049de0820cb" >
+<br>
 <b>Docker et interfaces</b>
 </td>
 </tr>
