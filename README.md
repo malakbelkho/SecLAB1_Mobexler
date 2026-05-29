@@ -1,55 +1,82 @@
-# Mobexler Lab Setup – LAB 1
+<div align="center">
 
-Mise en place d’un environnement de laboratoire mobile basé sur **Mobexler**, avec une configuration réseau propre, un accès Internet via **NAT**, un réseau privé **Host-Only**, une vérification d’ADB et la création d’un snapshot propre pour les prochains travaux pratiques.
+# 📱 Mobexler Lab Setup — LAB 1
 
----
+### Mise en place d’un environnement propre pour les tests de sécurité mobile  
+**Mobexler + VirtualBox + NAT + Host-Only + ADB + Snapshot CLEAN**
 
-## Objectif du laboratoire
+<br>
 
-Ce laboratoire a pour objectif de préparer un environnement stable pour les prochains travaux pratiques de sécurité mobile.
+![Mobexler](https://img.shields.io/badge/Mobexler-Mobile%20Security-22C55E?style=for-the-badge&logo=android&logoColor=white)
+![VirtualBox](https://img.shields.io/badge/VirtualBox-VM%20Lab-2563EB?style=for-the-badge&logo=virtualbox&logoColor=white)
+![ADB](https://img.shields.io/badge/ADB-Ready-F97316?style=for-the-badge&logo=android&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
 
-À la fin du LAB 1, l’environnement doit permettre de :
-
-- Démarrer correctement la machine virtuelle **Mobexler**.
-- Accéder à Internet depuis Mobexler grâce à l’interface **NAT**.
-- Communiquer avec une cible Android de test via un réseau **Host-Only**.
-- Vérifier la disponibilité de l’outil **ADB**.
-- Créer un snapshot propre nommé **CLEAN_BASELINE_TP1** afin de restaurer l’environnement en cas de problème.
+</div>
 
 ---
 
-## Outils utilisés
+## ✨ Aperçu du laboratoire
 
-- **VirtualBox**
-- **Mobexler OVA**
-- **PowerShell**
-- **Terminal Linux**
-- **Firefox**
-- **ADB – Android Debug Bridge**
+Ce laboratoire consiste à préparer un environnement de sécurité mobile basé sur **Mobexler**, une machine virtuelle orientée pentest mobile.  
+L’objectif principal est de disposer d’une VM stable, connectée à Internet via **NAT**, reliée à un réseau privé de laboratoire via **Host-Only**, et sauvegardée dans un état propre grâce à un snapshot.
+
+<div align="center">
+
+<img src="screenshots/Mobexler_on.png" width="70%" alt="Mobexler démarré">
+
+</div>
 
 ---
 
-## Arborescence des captures
+## 🎯 Objectifs pédagogiques
 
-Les captures du laboratoire sont placées dans le dossier :
+À la fin de ce LAB, l’environnement doit permettre de :
 
-```text
-screenshots/
-```
+| Objectif | Description |
+|---|---|
+| 🚀 Démarrage Mobexler | Lancer la VM sans erreur |
+| 🌐 Accès Internet | Utiliser le NAT pour accéder au Web |
+| 🧪 Réseau de laboratoire | Utiliser Host-Only pour communiquer avec une cible Android |
+| 🔌 ADB | Vérifier la disponibilité d’Android Debug Bridge |
+| 🧼 Snapshot CLEAN | Créer un état restaurable propre pour les prochains TPs |
 
-Exemple d’organisation :
+---
+
+## 🧰 Outils utilisés
+
+<div align="center">
+
+| Outil | Rôle |
+|---|---|
+| **VirtualBox** | Importation et exécution de la VM |
+| **Mobexler OVA** | Environnement de sécurité mobile |
+| **PowerShell** | Calcul du hash SHA256 |
+| **Terminal Linux** | Vérification réseau et ADB |
+| **Firefox** | Test de navigation Internet |
+| **ADB** | Communication future avec une cible Android |
+
+</div>
+
+---
+
+## 🗂️ Structure du dossier
 
 ```text
 LAB1_Mobexler/
+│
 ├── README.md
+│
 └── screenshots/
     ├── Mobexler_VM.png
     ├── import_VM.png
+    ├── mobexler_import.png
     ├── NAT_adapter.png
     ├── Host-Only_adapter.png
     ├── hash_pshell.png
     ├── online_hash.png
     ├── Mobexler_on.png
+    ├── Mobexler_in.png
     ├── ip_status.png
     ├── iproute.png
     ├── ping888.png
@@ -60,43 +87,56 @@ LAB1_Mobexler/
     └── snapshot_creation.png
 ```
 
----
-
-## 1. Téléchargement de l’image Mobexler
-
-L’image de la machine virtuelle Mobexler a été téléchargée au format **OVA** depuis le lien fourni dans la plateforme du professeur.
-
-Après téléchargement, le fichier OVA est placé dans le dossier du laboratoire afin de garder une trace claire du setup.
-
-![Fichier Mobexler OVA](screenshots/Mobexler_VM.png)
+> 💡 Les noms des images doivent correspondre exactement aux noms utilisés dans ce README.
 
 ---
 
-## 2. Vérification de l’intégrité du fichier
+# 🧩 Étape 1 — Téléchargement de Mobexler
 
-Pour vérifier l’intégrité du fichier téléchargé, un hash **SHA256** a été calculé avec PowerShell.
+L’image Mobexler a été téléchargée au format **OVA** depuis le lien fourni dans la plateforme du professeur.
 
-Commande utilisée :
+Ce fichier représente une machine virtuelle prête à être importée dans VirtualBox.
+
+<div align="center">
+
+<img src="screenshots/Mobexler_VM.png" width="70%" alt="Fichier OVA Mobexler">
+
+</div>
+
+---
+
+# 🔐 Étape 2 — Vérification du hash SHA256
+
+Pour garantir que le fichier téléchargé n’est pas corrompu, un hash **SHA256** a été calculé avec PowerShell.
 
 ```powershell
 Get-FileHash .\Mobexler.ova -Algorithm SHA256
 ```
 
-Cette étape permet de vérifier que le fichier n’est pas corrompu après le téléchargement.
+Cette étape permet de tracer le téléchargement et de vérifier l’intégrité de l’image OVA.
 
-![Calcul du hash SHA256](screenshots/hash_pshell.png)
+<div align="center">
 
-Une vérification du hash en ligne a également été effectuée afin de garder une preuve supplémentaire dans le dossier du laboratoire.
+<table>
+<tr>
+<td align="center" width="50%">
+<img src="screenshots/hash_pshell.png" width="100%" alt="Hash PowerShell"><br>
+<b>Hash calculé avec PowerShell</b>
+</td>
+<td align="center" width="50%">
+<img src="screenshots/online_hash.png" width="100%" alt="Hash online"><br>
+<b>Vérification du hash</b>
+</td>
+</tr>
+</table>
 
-![Vérification du hash](screenshots/online_hash.png)
+</div>
 
 ---
 
-## 3. Importation de la machine virtuelle
+# 📦 Étape 3 — Importation de la VM dans VirtualBox
 
-La machine virtuelle a été importée dans **VirtualBox** à partir du fichier OVA.
-
-Chemin utilisé dans VirtualBox :
+L’image OVA a été importée dans VirtualBox via :
 
 ```text
 File → Import Appliance
@@ -108,242 +148,331 @@ ou en français :
 Fichier → Importer un appareil virtuel
 ```
 
-Après l’importation, la VM Mobexler apparaît correctement dans VirtualBox.
+Après l’importation, la VM Mobexler apparaît correctement dans la liste des machines virtuelles.
 
-![Importation de la VM](screenshots/import_VM.png)
+<div align="center">
 
-![VM Mobexler importée](screenshots/mobexler_import.png)
+<table>
+<tr>
+<td align="center" width="50%">
+<img src="screenshots/import_VM.png" width="100%" alt="Importation VM"><br>
+<b>Importation de l’OVA</b>
+</td>
+<td align="center" width="50%">
+<img src="screenshots/mobexler_import.png" width="100%" alt="VM importée"><br>
+<b>VM Mobexler importée</b>
+</td>
+</tr>
+</table>
+
+</div>
 
 ---
 
-## 4. Configuration réseau
+# 🌐 Étape 4 — Configuration réseau
 
-La machine virtuelle Mobexler a été configurée avec deux cartes réseau.
-
-### Adapter 1 : NAT
-
-L’interface **NAT** permet à Mobexler d’accéder à Internet à travers la connexion de la machine hôte.
-
-Configuration :
+La VM a été configurée avec deux cartes réseau complémentaires :
 
 ```text
 Adapter 1 : NAT
-Cable Connected : Enabled
+Adapter 2 : Host-Only Adapter
 ```
 
-![Configuration NAT](screenshots/NAT_adapter.png)
+## 🟢 Adapter 1 — NAT
 
-### Adapter 2 : Host-Only
-
-L’interface **Host-Only** permet de créer un réseau privé entre la machine hôte, Mobexler et une future cible Android de test.
-
-Configuration :
+Le mode **NAT** permet à Mobexler d’utiliser la connexion Internet de la machine hôte.
 
 ```text
-Adapter 2 : Host-Only Adapter
+Attached to : NAT
 Cable Connected : Enabled
 ```
 
-![Configuration Host-Only](screenshots/Host-Only_adapter.png)
+<div align="center">
+
+<img src="screenshots/NAT_adapter.png" width="75%" alt="Configuration NAT">
+
+</div>
+
+## 🔵 Adapter 2 — Host-Only
+
+Le mode **Host-Only** crée un réseau privé entre la machine hôte, Mobexler et les futures cibles Android de test.
+
+```text
+Attached to : Host-Only Adapter
+Cable Connected : Enabled
+```
+
+<div align="center">
+
+<img src="screenshots/Host-Only_adapter.png" width="75%" alt="Configuration Host-Only">
+
+</div>
 
 ---
 
-## 5. Premier démarrage de Mobexler
+## 🧭 Schéma logique du réseau
 
-Après l’importation et la configuration réseau, la machine virtuelle Mobexler a été démarrée.
-
-L’environnement graphique s’est lancé correctement.
-
-![Démarrage Mobexler](screenshots/Mobexler_on.png)
-
-Après connexion, le bureau Mobexler est accessible.
-
-![Interface Mobexler](screenshots/Mobexler_in.png)
+```mermaid
+flowchart LR
+    A[PC Hôte] -->|VirtualBox| B[Mobexler VM]
+    B -->|Adapter 1 : NAT| C[Internet]
+    B -->|Adapter 2 : Host-Only| D[Réseau Lab 192.168.56.0/24]
+    D --> E[Cible Android de test]
+```
 
 ---
 
-## 6. Vérification des interfaces réseau
+# 🖥️ Étape 5 — Premier démarrage de Mobexler
 
-La commande suivante a été utilisée pour afficher les interfaces réseau :
+Après l’importation et la configuration réseau, Mobexler a été démarré avec succès.
+
+<div align="center">
+
+<table>
+<tr>
+<td align="center" width="50%">
+<img src="screenshots/Mobexler_on.png" width="100%" alt="Mobexler démarré"><br>
+<b>Démarrage de Mobexler</b>
+</td>
+<td align="center" width="50%">
+<img src="screenshots/Mobexler_in.png" width="100%" alt="Bureau Mobexler"><br>
+<b>Accès au bureau</b>
+</td>
+</tr>
+</table>
+
+</div>
+
+---
+
+# 📡 Étape 6 — Vérification des interfaces réseau
+
+Les interfaces réseau ont été vérifiées avec :
 
 ```bash
 ip a
 ```
 
-Une version plus lisible a également été utilisée :
+et avec une version plus lisible :
 
 ```bash
 ip -br a
 ```
 
-Les interfaces principales observées sont :
+Résultat important observé :
 
 ```text
-enp0s17 : interface NAT
-enp0s8  : interface Host-Only
-docker0 : interface interne Docker
+enp0s8    UP    192.168.56.104/24
 ```
 
-L’interface Host-Only a reçu l’adresse suivante :
+Cette adresse confirme que l’interface **Host-Only** fonctionne correctement.
 
-```text
-192.168.56.104/24
-```
+<div align="center">
 
-Cela confirme que la communication sur le réseau privé de laboratoire est fonctionnelle.
+<img src="screenshots/ip_status.png" width="80%" alt="IP status">
 
-![État des interfaces réseau](screenshots/ip_status.png)
+</div>
 
-![Adresse Host-Only](screenshots/ipa 1.png)
+## 📸 Détails des interfaces
 
-![Détails IP](screenshots/ipa 2.png)
+<div align="center">
 
-![Détails IP supplémentaires](screenshots/ipa 3.png)
+<table>
+<tr>
+<td align="center" width="33%">
+<img src="screenshots/ipa_1.png" width="100%" alt="ip a 1"><br>
+<b>Interface Host-Only</b>
+</td>
+<td align="center" width="33%">
+<img src="screenshots/ipa_2.png" width="100%" alt="ip a 2"><br>
+<b>Détails IP</b>
+</td>
+<td align="center" width="33%">
+<img src="screenshots/ipa_3.png" width="100%" alt="ip a 3"><br>
+<b>Docker et interfaces</b>
+</td>
+</tr>
+</table>
+
+</div>
+
+> ⚠️ Dans mon dossier, les captures `ipa 1`, `ipa 2` et `ipa 3` peuvent être renommées en `ipa_1.png`, `ipa_2.png` et `ipa_3.png` pour éviter les problèmes d’affichage sur GitHub.
 
 ---
 
-## 7. Vérification de la route réseau
+# 🛣️ Étape 7 — Vérification de la route réseau
 
-La route réseau a été vérifiée avec la commande :
+La route réseau a été vérifiée avec :
 
 ```bash
 ip route
 ```
 
-Cette commande permet d’identifier la route par défaut utilisée par Mobexler pour accéder à Internet.
+Cette commande permet de confirmer les réseaux connus par Mobexler et la route utilisée pour la communication réseau.
 
-![Vérification de la route](screenshots/iproute.png)
+<div align="center">
+
+<img src="screenshots/iproute.png" width="80%" alt="IP route">
+
+</div>
 
 ---
 
-## 8. Test de connectivité Internet
+# ✅ Étape 8 — Test de connectivité Internet
 
-La connectivité Internet a été testée en deux étapes.
+Deux tests ont été réalisés :
 
-### Test vers une adresse IP publique
-
-Commande utilisée :
+## Test vers une adresse IP publique
 
 ```bash
 ping -c 2 8.8.8.8
 ```
 
-Résultat obtenu :
+Résultat :
 
 ```text
 2 packets transmitted, 2 received, 0% packet loss
 ```
 
-Cela confirme que la connectivité IP fonctionne.
+<div align="center">
 
-![Ping vers 8.8.8.8](screenshots/ping888.png)
+<img src="screenshots/ping888.png" width="80%" alt="Ping 8.8.8.8">
 
-### Test DNS avec Google
+</div>
 
-Commande utilisée :
+## Test DNS avec Google
 
 ```bash
 ping -c 2 google.com
 ```
 
-Résultat obtenu :
+Résultat :
 
 ```text
 2 packets transmitted, 2 received, 0% packet loss
 ```
 
-Cela confirme que la résolution DNS fonctionne également.
+<div align="center">
 
-![Ping vers Google](screenshots/pinggoogle.png)
+<img src="screenshots/pinggoogle.png" width="80%" alt="Ping Google">
 
----
-
-## 9. Test Internet avec Firefox
-
-L’accès Web a été testé depuis Firefox à l’intérieur de la VM Mobexler.
-
-La page Google s’ouvre correctement, ce qui confirme que l’accès Internet fonctionne aussi depuis le navigateur.
-
-![Firefox Internet OK](screenshots/firefox_internet_OK.png)
+</div>
 
 ---
 
-## 10. Vérification d’ADB
+# 🔎 Étape 9 — Test Internet avec Firefox
 
-ADB a été vérifié avec la commande :
+L’accès Internet a aussi été testé depuis Firefox dans la VM.
+
+La page Google s’ouvre correctement, ce qui confirme que la navigation Web fonctionne.
+
+<div align="center">
+
+<img src="screenshots/firefox_internet_OK.png" width="85%" alt="Firefox Internet OK">
+
+</div>
+
+---
+
+# 🔌 Étape 10 — Vérification d’ADB
+
+ADB a été vérifié avec :
 
 ```bash
 adb version
 ```
 
-Résultat observé :
+Résultat obtenu :
 
 ```text
 Android Debug Bridge version 1.0.39
 ```
 
-Cela confirme que l’outil ADB est disponible dans l’environnement Mobexler.
+<div align="center">
 
-![Version ADB](screenshots/adbversion.png)
+<img src="screenshots/adbversion.png" width="80%" alt="ADB version">
 
-La commande suivante a ensuite été exécutée :
+</div>
+
+Ensuite, la liste des appareils Android connectés a été vérifiée :
 
 ```bash
 adb devices
 ```
 
-Aucun appareil Android n’était encore connecté, ce qui est normal à cette étape du laboratoire.
+Aucun appareil Android n’était encore connecté, ce qui est normal pour ce premier laboratoire.
 
-![ADB devices](screenshots/adbdevices.png)
+<div align="center">
+
+<img src="screenshots/adbdevices.png" width="80%" alt="ADB devices">
+
+</div>
 
 ---
 
-## 11. Création du snapshot CLEAN
+# 🧼 Étape 11 — Création du snapshot CLEAN
 
-Après validation de la configuration réseau, de l’accès Internet et de la disponibilité d’ADB, un snapshot propre a été créé.
-
-Nom du snapshot :
+Après validation de l’environnement, un snapshot propre a été créé.
 
 ```text
-CLEAN_BASELINE_TP1
+Nom : CLEAN_BASELINE_TP1
 ```
 
-Description utilisée :
+Description :
 
 ```text
 Import OK, NAT + Host-Only OK, Internet OK, DNS OK, ADB prêt.
 ```
 
-Ce snapshot permettra de restaurer rapidement la machine virtuelle dans un état propre avant les prochains travaux pratiques.
+Ce snapshot permet de revenir à un état stable avant les prochains travaux pratiques.
 
-![Création du snapshot](screenshots/snapshot_creation.png)
+<div align="center">
+
+<img src="screenshots/snapshot_creation.png" width="75%" alt="Snapshot CLEAN">
+
+</div>
 
 ---
 
-## Résumé des validations
+# 📊 Tableau récapitulatif
 
-| Élément vérifié | Statut |
+| Vérification | Résultat |
 |---|---|
-| Fichier OVA téléchargé | Validé |
-| Hash SHA256 calculé | Validé |
-| VM importée dans VirtualBox | Validé |
-| Adapter 1 configuré en NAT | Validé |
-| Adapter 2 configuré en Host-Only | Validé |
-| Mobexler démarre correctement | Validé |
-| Interface Host-Only avec IP `192.168.56.104/24` | Validé |
-| Route réseau vérifiée | Validé |
-| Ping vers `8.8.8.8` | Validé |
-| Ping vers `google.com` | Validé |
-| Internet fonctionnel dans Firefox | Validé |
-| ADB disponible | Validé |
-| Snapshot `CLEAN_BASELINE_TP1` créé | Validé |
+| 📦 Fichier OVA téléchargé | ✅ Validé |
+| 🔐 Hash SHA256 calculé | ✅ Validé |
+| 🖥️ VM importée dans VirtualBox | ✅ Validé |
+| 🌐 Adapter NAT configuré | ✅ Validé |
+| 🔵 Adapter Host-Only configuré | ✅ Validé |
+| 🚀 Mobexler démarre correctement | ✅ Validé |
+| 📡 Interface Host-Only en `192.168.56.104/24` | ✅ Validé |
+| 🛣️ Route réseau vérifiée | ✅ Validé |
+| ✅ Ping `8.8.8.8` | ✅ Validé |
+| ✅ Ping `google.com` | ✅ Validé |
+| 🔎 Firefox Internet OK | ✅ Validé |
+| 🔌 ADB disponible | ✅ Validé |
+| 🧼 Snapshot `CLEAN_BASELINE_TP1` créé | ✅ Validé |
 
 ---
 
-## Conclusion
+# 📝 Conclusion
 
-L’environnement **Mobexler** est maintenant opérationnel pour les prochains laboratoires de sécurité mobile.
+L’environnement **Mobexler** est maintenant prêt pour les prochains laboratoires de sécurité mobile.
 
-La machine virtuelle dispose d’un accès Internet via **NAT**, d’une interface **Host-Only** pour la communication avec une cible Android de test, et de l’outil **ADB** pour les futures manipulations Android.
+La machine virtuelle dispose :
 
-Le snapshot **CLEAN_BASELINE_TP1** garantit un état de départ propre et restaurable avant toute expérimentation avancée.
+- d’un accès Internet via **NAT** ;
+- d’un réseau privé **Host-Only** pour les futures communications avec une cible Android ;
+- d’**ADB** pour les manipulations Android ;
+- d’un snapshot propre nommé **CLEAN_BASELINE_TP1**.
+
+Ce snapshot servira de point de restauration propre avant toute modification avancée comme l’installation de certificats, la configuration de proxy ou les tests sur applications Android.
+
+---
+
+<div align="center">
+
+### ✅ LAB 1 terminé avec succès
+
+**Mobexler est prêt pour les prochains TPs de sécurité mobile.**
+
+</div>
