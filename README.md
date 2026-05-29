@@ -192,9 +192,7 @@ Cable Connected : Enabled
 ```
 
 <div align="center">
-
-<img src="screenshots/NAT_adapter.png" width="75%" alt="Configuration NAT">
-
+<img width="75%" alt="Configuration NAT" src="https://github.com/user-attachments/assets/240d1dfc-fca0-4943-8537-d6844a2cdcd4" >
 </div>
 
 ## 🔵 Adapter 2 — Host-Only
@@ -207,8 +205,8 @@ Cable Connected : Enabled
 ```
 
 <div align="center">
-
-<img src="screenshots/Host-Only_adapter.png" width="75%" alt="Configuration Host-Only">
+    
+<img width="75%" alt="Configuration Host-Only" src="https://github.com/user-attachments/assets/b4741dae-21d5-4cd8-bc0b-a15e899f4741" >
 
 </div>
 
@@ -235,11 +233,13 @@ Après l’importation et la configuration réseau, Mobexler a été démarré a
 <table>
 <tr>
 <td align="center" width="50%">
-<img src="screenshots/Mobexler_on.png" width="100%" alt="Mobexler démarré"><br>
+<img width="100%" alt="Mobexler démarré" src="https://github.com/user-attachments/assets/ad2bd3f8-b7f9-47e8-9396-7afbe4885818" >
+<br>
 <b>Démarrage de Mobexler</b>
 </td>
 <td align="center" width="50%">
-<img src="screenshots/Mobexler_in.png" width="100%" alt="Bureau Mobexler"><br>
+<img width="100%" alt="Bureau Mobexler" src="https://github.com/user-attachments/assets/d11262b4-09b1-4e34-a501-3e8f1779bb86" >
+<br>
 <b>Accès au bureau</b>
 </td>
 </tr>
