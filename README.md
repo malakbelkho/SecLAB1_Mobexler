@@ -318,8 +318,8 @@ ip route
 Cette commande permet de confirmer les réseaux connus par Mobexler et la route utilisée pour la communication réseau.
 
 <div align="center">
-
-<img src="screenshots/iproute.png" width="80%" alt="IP route">
+    
+<img width="80%" alt="IP route" src="https://github.com/user-attachments/assets/9e378eae-e43e-4618-a0cb-5eea52d40fa4" >
 
 </div>
 
@@ -343,7 +343,7 @@ Résultat :
 
 <div align="center">
 
-<img src="screenshots/ping888.png" width="80%" alt="Ping 8.8.8.8">
+<img width="80%" alt="Ping 8.8.8.8" src="https://github.com/user-attachments/assets/2360151f-c5e7-46d9-a70d-7e42ab542a0a" >
 
 </div>
 
@@ -360,8 +360,8 @@ Résultat :
 ```
 
 <div align="center">
-
-<img src="screenshots/pinggoogle.png" width="80%" alt="Ping Google">
+    
+<img width="80%" alt="Ping Google" src="https://github.com/user-attachments/assets/be9792f0-71d0-4d88-a227-58df812a00bd" >
 
 </div>
 
@@ -375,7 +375,7 @@ La page Google s’ouvre correctement, ce qui confirme que la navigation Web fon
 
 <div align="center">
 
-<img src="screenshots/firefox_internet_OK.png" width="85%" alt="Firefox Internet OK">
+<img width="85%" alt="Firefox Internet OK" src="https://github.com/user-attachments/assets/ea6d2e53-a1ec-4e3f-a4cb-43c4156f706e" >
 
 </div>
 
